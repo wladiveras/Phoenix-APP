@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "target": "ES6",
+        "useDefineForClassFields": true,
+        "module": "ES2022",
+        "moduleResolution": "node",
+        "isolatedModules": true,
+        "strict": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "declaration": true,
+        "skipLibCheck": true,
+        "types": [
+            "node",
+            "vite/client",
+            "vite-plugin-pwa/client",
+            "vite-plugin-pages/client",
+            "@intlify/vite-plugin-vue-i18n/client"
+        ],
+        "paths": {
+            "/~/*": ["./src/assets/*"],
+            "/@src/*": ["./src/*"]
+        }
+    },
+    "lib": ["DOM", "ES2020"],
+    "skipLibCheck": true,
+    "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "documentation/**/*.md"]
+}

@@ -1,0 +1,164 @@
+.is-dark {
+    .user-grid {
+        .grid-item {
+            @include vuero-card--dark();
+        }
+    }
+}
+
+.user-grid-v1 {
+    .columns {
+        margin-left: -0.5rem !important;
+        margin-right: -0.5rem !important;
+        margin-top: -0.5rem !important;
+    }
+
+    .column {
+        padding: 0.5rem !important;
+    }
+    //cambio el tamaño de la pantalla
+    .grid-item3 {
+        flex: 1;
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        border-radius: 20px;
+        border: 1px solid #e5e5e5;
+        transition: all 0.3s;
+    }
+    .grid-item2 {
+        flex: 1;
+        width: 100%;
+        padding: 20px;
+        background-color: white;
+        border-bottom-left-radius: 25px;
+        border: 1px solid #e5e5e5;
+        transition: all 0.3s;
+        text-align: center;
+        box-shadow: 2px 4px 5px #999;
+        //border-bottom-left-radius: 36px;
+        > .v-avatar {
+            display: block;
+            //margin: 0 auto 4px auto;
+        }
+
+        h3 {
+            font-family: $font-alt;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: $dark-text;
+        }
+        h2 {
+            font-family: $font-alt;
+            //font-size: medium;
+            font-size: 14px;
+            color: #292929;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 0.85rem;
+        }
+
+        .people {
+            display: flex;
+            justify-content: center;
+            padding: 8px 0 30px 0;
+
+            .v-avatar {
+                margin: 0 4px;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+
+            .button {
+                width: calc(50% - 4px);
+                color: $light-text;
+
+                &:hover {
+                    border-color: darken($fade-grey, 4%);
+                    color: $primary;
+                    box-shadow: $light-box-shadow;
+                }
+            }
+        }
+    }
+    .grid-item {
+        @include vuero-s-card();
+
+        text-align: center;
+
+        > .v-avatar {
+            display: block;
+            //margin: 0 auto 4px auto;
+        }
+
+        h3 {
+            font-family: $font-alt;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: $dark-text;
+        }
+        h2 {
+            font-family: $font-alt;
+            font-size: medium;
+            color: $plomo;
+        }
+
+        p {
+            font-size: 0.85rem;
+        }
+
+        .people {
+            display: flex;
+            justify-content: center;
+            padding: 8px 0 30px 0;
+
+            .v-avatar {
+                margin: 0 4px;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+
+            .button {
+                width: calc(50% - 4px);
+                color: $light-text;
+
+                &:hover {
+                    border-color: darken($fade-grey, 4%);
+                    color: $primary;
+                    box-shadow: $light-box-shadow;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .user-grid-v1 {
+        .columns {
+            display: flex;
+
+            .column {
+                min-width: 50% !important;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .user-grid-v1 {
+        .columns {
+            .column {
+                min-width: 33.3% !important;
+            }
+        }
+    }
+}
