@@ -16,13 +16,13 @@
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-  on('before:browser:launch', (browser = {}, launchOptions) => {
-    // if (browser.name === 'electron') {
-    //   // launchOptions.preferences is a `BrowserWindow` `options` object
-    //   launchOptions.preferences.darkTheme = true
-    //   return launchOptions
-    // }
-  })
+    // `on` is used to hook into various events Cypress emits
+    // `config` is the resolved Cypress config
+    on("before:browser:launch", (browser = {}, launchOptions) => {
+        // if (browser.name === 'electron') {
+        //   // launchOptions.preferences is a `BrowserWindow` `options` object
+        //   launchOptions.preferences.darkTheme = true
+        //   return launchOptions
+        // }
+    })
 }

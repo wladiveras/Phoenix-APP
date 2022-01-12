@@ -1,17 +1,11 @@
 <script setup lang="ts">
 import { popovers } from "/@src/data/users/userPopovers"
-import useApi from "/@src/composable/useApi"
 import useNotyf from "/@src/composable/useNotyf"
-import { onBeforeMount, ref } from "vue"
-import { useRoute, useRouter } from "vue-router"
-import useUserSession from "/@src/composable/useUserSession"
+import { useRouter } from "vue-router"
+import { ref } from "vue"
 
 const router = useRouter()
-const route = useRoute().params
-const session = useUserSession()
-
 const notif = useNotyf()
-const api = useApi()
 const invoice = ref()
 const isLoading = ref(true)
 
@@ -19,13 +13,12 @@ if (!isLoading.value) {
     isLoading.value = true
 }
 
-const invoiceApi = api
-    .get("commercial/invoice/" + route.id)
-    .then((response) => {
+api.get("commercial/invoice/6064")
+    .then(response => {
         invoice.value = response.data.response.propostascomerciais[0].propostacomercial
     })
-    .catch((error) => {
-        notif.error("Não foi possivel encontrar a proposta comercial, tente novamente mais tarde.")
+    .catch(() => {
+        notif.error("Não foi possível encontrar a proposta comercial, tente novamente mais tarde.")
         router.push({
             name: "index",
         })

@@ -1,10 +1,9 @@
 import { api } from "/@src/composable/useApi"
-import { useStorage } from "@vueuse/core"
+import { ISession } from "/@src/@types/interfaces/sessionInterface"
 
 const state = {
     user: {},
     token: {
-        key: "",
         value: "",
         refresh: "",
     },
@@ -12,20 +11,17 @@ const state = {
 }
 
 const mutations = {
-    AUTH_LOGIN(state, payload) {
+    AUTH_LOGIN(state: ISession, payload: ISession) {
         state.user = payload.response.user
-        state.token.key = payload.response.key
         state.token.value = payload.response.token
         state.token.refresh = payload.response.refreshToken
     },
-    AUTH_LOGOUT: (state) => {
+    AUTH_LOGOUT: (state: ISession) => {
         state.user = {}
-        state.token.key = ""
         state.token.value = ""
         state.token.refresh = ""
     },
-    REFRESH_TOKEN(state, payload) {
-        state.token.key = payload.key
+    REFRESH_TOKEN(state: ISession, payload) {
         state.token.value = payload.token
         state.token.refresh = payload.refreshToken
     },
@@ -38,33 +34,33 @@ const actions = {
                 email: user.data.email,
                 password: user.data.password,
             })
-                .then((response) => {
+                .then(response => {
                     commit("AUTH_LOGIN", response.data)
-                    resolve(response)
+                    resolve(response.data)
                 })
-                .catch((error) => {
+                .catch(error => {
                     reject(error)
                 })
         })
     },
     logout({ commit }) {
-        return new Promise((resolve, reject) => {
+        return new Promise(resolve => {
             commit("AUTH_LOGOUT")
             resolve(true)
         })
     },
     testAccess({ state, commit }) {
-        api.get("users/61cb760ee2c5affee39d15c8").then((response) => {
+        api.get("users/61cb760ee2c5affee39d15c8").then(response => {
             console.log("success")
         })
     },
 }
 
 const getters = {
-    uid: (state) => state.user.id,
-    user: (state) => state.user,
-    isLoggedIn: (state) => !!state.token.value,
-    token: (state) => state.token,
+    uid: state => state.user.id,
+    user: state => state.user,
+    isLoggedIn: state => !!state.token.value,
+    token: state => state.token,
 }
 
 const sessionModule = {

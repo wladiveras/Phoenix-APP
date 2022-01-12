@@ -9,10 +9,9 @@ const api = axios.create({
     },
 })
 
-api.interceptors.request.use((config) => {
+api.interceptors.request.use(config => {
     const token = computed(() => store.getters.token.value)
 
-    console.log(token.value)
     if (token.value) {
         config.headers.Authorization = `${token.value}`
     }
@@ -21,14 +20,12 @@ api.interceptors.request.use((config) => {
 })
 
 api.interceptors.response.use(
-    (response) => {
+    response => {
         return response
     },
-    (err) => {
+    err => {
         const uid = computed(() => store.getters.uid)
         const token = computed(() => store.getters.token)
-        console.log("xx" + JSON.stringify(token.value))
-        console.log("uid" + uid.value)
 
         // return other errors
         if (err.response.status !== 401) {
@@ -56,14 +53,13 @@ api.interceptors.response.use(
                 id: uid.value,
                 token: token.value.refresh,
             })
-            .then((success) => {
-                console.log("success token updated")
+            .then(success => {
                 const config = err.response.config
                 config.headers.Authorization = success.data.response.token
                 store.commit("REFRESH_TOKEN", success.data.response)
                 return api(config)
             })
-    },
+    }
 )
 
 export { api }

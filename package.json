@@ -9,11 +9,8 @@
         "dev:force": "cross-env vite --force --mode development",
         "e2e": "cypress run",
         "e2a": "cypress open",
-        "lint": "npx eslint src",
-        "lint:fix": "npm run lint -- --fix",
-        "prettier": "npx prettier src --check",
-        "prettier:fix": "npm run prettier -- --write",
-        "format": "npm run prettier:fix && npm run lint:fix"
+        "lint": "eslint --ext .js,.ts .",
+        "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "29.0.0",
@@ -61,6 +58,7 @@
         "simple-datatables": "3.0.2",
         "simplebar": "6.0.0-beta.10",
         "simplebar-vue": "2.0.0-beta.10",
+        "socket.io-client": "^4.4.1",
         "stylelint": "^14.2.0",
         "stylelint-config-sass-guidelines": "^9.0.1",
         "stylelint-config-standard": "^24.0.0",

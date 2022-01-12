@@ -3,24 +3,21 @@ module.exports = {
     env: {
         browser: true,
         node: true,
+        es2021: true,
     },
     parser: "vue-eslint-parser",
     parserOptions: {
         parser: "@typescript-eslint/parser",
-        ecmaVersion: 2022,
+        ecmaVersion: 12,
         sourceType: "module",
         tsconfigRootDir: __dirname,
     },
-    extends: [
-        "plugin:@typescript-eslint/recommended",
-        "eslint:recommended",
-        "plugin:prettier/recommended",
-        "plugin:vue/vue3-recommended",
-        //"plugin:vue/recommended",
-    ],
+    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:vue/essential", "prettier"],
+
     plugins: ["prettier", "@typescript-eslint"],
     rules: {
         "no-unused-vars": "off",
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     },
     ignorePatterns: ["dist"],
     globals: {

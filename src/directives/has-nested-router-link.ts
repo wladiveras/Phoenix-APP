@@ -16,12 +16,12 @@ const hasNestedRouterLink: Directive = {
                 el.classList.remove("active")
             }
 
-            link.onclick = (event) => {
+            link.onclick = event => {
                 event.preventDefault()
 
                 const isActive = el.classList.contains("active")
 
-                document.querySelectorAll(".has-children").forEach((element) => element.classList.remove("active"))
+                document.querySelectorAll(".has-children").forEach(element => element.classList.remove("active"))
 
                 if (isActive) {
                     el.classList.remove("active")

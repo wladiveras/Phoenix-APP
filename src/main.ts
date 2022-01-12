@@ -72,4 +72,4 @@ createApp({
         app.directive("background", background)
         app.directive("tooltip", tooltip)
     },
-}).then((app) => app.mount("#app"))
+}).then(app => app.mount("#app"))

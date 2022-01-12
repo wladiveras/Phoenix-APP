@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { useHead } from "@vueuse/head"
 import { pageTitle } from "/@src/state/navbarLayoutState"
-import useUserSession from "/@src/composable/useUserSession"
-import { useRoute, useRouter } from "vue-router"
-import { onBeforeMount, onUpdated, onUnmounted } from "vue"
 
 const title = "Pedido #313"
 
@@ -17,7 +14,7 @@ useHead({
     <NavbarSearchLayout theme="fade">
         <!-- Content Wrapper -->
         <div class="page-content-inner">
-            <OrderDetail :route-data="route" />
+            <OrderDetail />
         </div>
     </NavbarSearchLayout>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from "vue"
-import { useRouter, useRoute } from "vue-router"
+import { useRouter } from "vue-router"
 import { useHead } from "@vueuse/head"
 import { useI18n } from "vue-i18n"
 import { isDark } from "/@src/state/darkModeState"
@@ -13,11 +13,9 @@ type StepId = "login" | "forgot-password"
 const step = ref<StepId>("login")
 const isLoading = ref(false)
 const router = useRouter()
-const route = useRoute()
 const notif = useNotyf()
 const store = useStore()
-const { locale, t } = useI18n()
-const redirect = route.query.redirect as string
+const { t } = useI18n()
 
 //==[ START // Login Form ]====>
 const schemaLogin = yup.object().shape({
@@ -29,7 +27,7 @@ const schemaLogin = yup.object().shape({
     password: yup.string().required(t("validation.required")).min(6, "A senha deve conter no mínimo 6 caracteres"),
 })
 
-const handleLogin = async (values) => {
+const handleLogin = async values => {
     isLoading.value = true
 
     const data = {
@@ -37,21 +35,19 @@ const handleLogin = async (values) => {
         password: values.password,
     }
 
-    const user = computed(() => store.state.session.user)
-
     store
         .dispatch("login", { data })
-        .then((response) => {
-            notif.success("Bem vindo de volta " + user.value.name)
+        .then(response => {
+            notif.success("Bem vindo de volta " + response.response.user.name)
             router.push("/")
         })
-        .catch((error) => {
+        .catch(() => {
             notif.error("Não foi possível se conectar, verifique os dados e tente novamente")
         })
         .finally(() => (isLoading.value = false))
 }
 
-const invalidLogin = async (values: String) => {
+const invalidLogin = async () => {
     notif.error("Não foi possível validar as informações, verifique os campos e tente novamente")
 }
 //==[ END // Login Form ]====>
@@ -88,7 +84,7 @@ useHead({
                         type="checkbox"
                         :checked="!isDark"
                         @change="
-                            (event) => {
+                            event => {
                                 // @ts-ignore: Unreachable code error
                                 isDark = !event.target.checked
                             }
@@ -132,7 +128,7 @@ useHead({
                                 </V-Button>
                                 <a @click="step = 'forgot-password'">Esqueceu sua senha?</a>
                             </div>
-                            <div class="button-wrap has-help"></div>
+                            <d iv class="button-wrap has-help"></d>
                         </Form>
 
                         <form

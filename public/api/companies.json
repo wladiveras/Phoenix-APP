@@ -1,58 +1,58 @@
 [
     {
-        "id":"0",
-        "name":"Airbnb",
+        "id": "0",
+        "name": "Airbnb",
         "initials": "A",
-        "location":"Los Angeles, CA",
-        "pic":"/demo/photos/brands/airbnb.svg"
+        "location": "Los Angeles, CA",
+        "pic": "/demo/photos/brands/airbnb.svg"
     },
     {
-        "id":"1",
-        "name":"Facebook",
+        "id": "1",
+        "name": "Facebook",
         "initials": "F",
-        "location":"Los Angeles, CA",
-        "pic":"/demo/photos/brands/facebook.svg"
+        "location": "Los Angeles, CA",
+        "pic": "/demo/photos/brands/facebook.svg"
     },
     {
-        "id":"2",
-        "name":"GitHub",
+        "id": "2",
+        "name": "GitHub",
         "initials": "A",
-        "location":"Los Angeles, CA",
-        "pic":"/demo/photos/brands/github.svg"
+        "location": "Los Angeles, CA",
+        "pic": "/demo/photos/brands/github.svg"
     },
     {
-        "id":"3",
-        "name":"Gitlab",
+        "id": "3",
+        "name": "Gitlab",
         "initials": "A",
-        "location":"Los Angeles, CA",
-        "pic":"/demo/photos/brands/gitlab.svg"
+        "location": "Los Angeles, CA",
+        "pic": "/demo/photos/brands/gitlab.svg"
     },
     {
-        "id":"4",
-        "name":"Atlassian",
+        "id": "4",
+        "name": "Atlassian",
         "initials": "A",
-        "location":"Los Angeles, CA",
-        "pic":"/demo/photos/brands/atlassian.svg"
+        "location": "Los Angeles, CA",
+        "pic": "/demo/photos/brands/atlassian.svg"
     },
     {
-        "id":"5",
-        "name":"Google",
+        "id": "5",
+        "name": "Google",
         "initials": "A",
-        "location":"Los Angeles, CA",
-        "pic":"/demo/photos/brands/google.svg"
+        "location": "Los Angeles, CA",
+        "pic": "/demo/photos/brands/google.svg"
     },
     {
-        "id":"6",
-        "name":"Dribbble",
+        "id": "6",
+        "name": "Dribbble",
         "initials": "A",
-        "location":"Los Angeles, CA",
-        "pic":"/demo/photos/brands/dribbble.svg"
+        "location": "Los Angeles, CA",
+        "pic": "/demo/photos/brands/dribbble.svg"
     },
     {
-        "id":"7",
-        "name":"Hubspot",
+        "id": "7",
+        "name": "Hubspot",
         "initials": "A",
-        "location":"Los Angeles, CA",
-        "pic":"/demo/photos/brands/hubspot.svg"
+        "location": "Los Angeles, CA",
+        "pic": "/demo/photos/brands/hubspot.svg"
     }
 ]

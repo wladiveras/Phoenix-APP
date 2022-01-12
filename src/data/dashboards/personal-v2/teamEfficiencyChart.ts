@@ -13,10 +13,10 @@ const series = [
         name: "Management",
         data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
     },
-].map((s) => {
+].map(s => {
     return {
         name: s.name,
-        data: s.data.map((d) => {
+        data: s.data.map(d => {
             return d - 70
         }),
     }

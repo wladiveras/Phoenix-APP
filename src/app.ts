@@ -36,7 +36,7 @@ export async function createApp({ enhanceApp }: PhoenixAppOptions) {
                             { name: "fade-slow", mode: "out-in" },
                             {
                                 default: () => [h(Component)],
-                            },
+                            }
                         ),
                     ]
                 }

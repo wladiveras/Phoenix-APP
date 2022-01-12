@@ -17,7 +17,7 @@ const dropdown = useDropdown(dropdownElement)
                 <div class="dropdown-content">
                     <div class="heading">
                         <div class="heading-left">
-                            <h6 class="heading-title">Notifications</h6>
+                            <h6 class="heading-title">Notifxa2ications</h6>
                         </div>
                         <div class="heading-right">
                             <RouterLink class="notification-link" :to="{ name: '' }"> See all </RouterLink>
@@ -35,7 +35,7 @@ const dropdown = useDropdown(dropdownElement)
                                     />
                                 </div>
                                 <div class="user-content">
-                                    <p class="user-info"><span class="name">Alice C.</span> left a comment.</p>
+                                    <p class="user-info"><span class="name">Alic2e C.</span> left a comment.</p>
                                     <p class="time">1 hour ago</p>
                                 </div>
                             </a>

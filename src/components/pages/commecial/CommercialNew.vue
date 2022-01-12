@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { useWindowScroll } from "@vueuse/core"
 import { computed, ref, reactive } from "vue"
-import useUserSession from "/@src/composable/useUserSession"
-import useApi from "/@src/composable/useApi"
+
 import useNotyf from "/@src/composable/useNotyf"
 import { useI18n } from "vue-i18n"
 import { Form } from "vee-validate"
@@ -10,12 +9,10 @@ import * as yup from "yup"
 
 import { products, cardOption, cordOption, rollerOption, maskOption, credOption } from "/@src/data/alternativa/products"
 
-const { locale, t } = useI18n()
+const { t } = useI18n()
 
 const isLoading = ref(false)
 const notif = useNotyf()
-const session = useUserSession()
-const api = useApi()
 const invoiceNumber = ref("0000")
 const goNext = ref()
 const valuesInvoice = reactive({})
@@ -26,9 +23,6 @@ const isStuck = computed(() => {
 })
 
 // == [ Form Schema ] ============>
-
-const testing: Boolean = false
-
 const schemaInvoice = yup.object().shape({
     ticket: yup.string().required(t("validation.required")).url("Informe uma URL valida."),
     responsible: yup.string().required(t("validation.required")).min(3, "O nome deve ter no mínimo 3 caracteres"),
@@ -153,7 +147,7 @@ const handleSearch = async () => {
         isLoading.value = true
 
         api.get("commercial/invoice/" + invoiceNumber.value)
-            .then((response) => {
+            .then(response => {
                 goNext.value = true
 
                 const res = response.data.response.propostascomerciais[0].propostacomercial
@@ -177,7 +171,7 @@ const handleSearch = async () => {
                 }
                 Object.assign(valuesInvoice, data)
             })
-            .catch((error) => {
+            .catch(error => {
                 notif.error("Não foi possivel encontrar a proposta comercial, tente novamente mais tarde.")
             })
             .finally(() => (isLoading.value = false))

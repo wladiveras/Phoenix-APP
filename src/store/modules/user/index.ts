@@ -17,17 +17,17 @@ const mutations = {
 
 const actions = {
     getProductItems({ commit }) {
-        axios.post(`/api/products`, {}).then((response) => {
+        axios.post(`/api/products`, {}).then(response => {
             commit("UPDATE_PRODUCT_ITEMS", response.data)
         })
     },
 }
 
 const getters = {
-    getId: (state) => state.uid,
-    getUser: (state) => state.productItems,
-    getUserById: (state) => (id) => {
-        return state.productItems.find((productItem) => productItem.id === id)
+    getId: state => state.uid,
+    getUser: state => state.productItems,
+    getUserById: state => id => {
+        return state.productItems.find(productItem => productItem.id === id)
     },
 }
 

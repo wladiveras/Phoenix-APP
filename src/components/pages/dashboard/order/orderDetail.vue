@@ -16,9 +16,7 @@ const props = defineProps({
     },
 })
 
-const filterTasks = ref(0)
 const tab = ref(props.activeTab)
-const rProps = ref(props.routeData)
 </script>
 
 <template>
@@ -47,7 +45,7 @@ const rProps = ref(props.routeData)
                         <div class="project-details-card">
                             <div class="card-head">
                                 <div class="title-wrap">
-                                    <h3>Pedido #{{ rProps.id }}</h3>
+                                    <h3>Pedido #</h3>
                                     <p>XING LING LTDA.</p>
                                 </div>
 

@@ -34,7 +34,7 @@ const back = ref(props.backData)
     <!-- flip-card-container -->
     <div class="flip-card-container">
         <div class="flip-card">
-            <div class="card-front">
+            <div class="card-front box-shadow">
                 <figure>
                     <img :src="front.background.value" />
                     <figcaption v-if="caption">{{ caption }}</figcaption>
@@ -63,7 +63,7 @@ const back = ref(props.backData)
                 </ul>
             </div>
 
-            <div class="card-back">
+            <div class="card-back box-shadow">
                 <figure>
                     <img :src="back.background.value" />
                     <figcaption v-if="caption">{{ caption }}</figcaption>
@@ -106,7 +106,10 @@ const back = ref(props.backData)
     padding: 0;
     box-sizing: border-box;
 }
-
+.box-shadow {
+    -webkit-box-shadow: 1px 4px 12px -3px rgba(0, 0, 0, 0.77);
+    box-shadow: 1px 4px 12px -3px rgba(0, 0, 0, 0.77);
+}
 body {
     display: flex;
     flex-wrap: wrap;

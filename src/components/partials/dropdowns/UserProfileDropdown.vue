@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue"
+import { useStore } from "vuex"
 import { useRouter } from "vue-router"
 
 import useNotyf from "/@src/composable/useNotyf"
-import { useStore } from "vuex"
+import sleep from "/@src/utils/sleep"
 
 const isLoading = ref(false)
 const router = useRouter()
@@ -13,12 +14,13 @@ const store = useStore()
 const handleLogout = async () => {
     store
         .dispatch("logout")
-        .then((response) => {
+        .then(response => {
             isLoading.value = true
+            sleep(2000)
             notif.success("Até a proxima")
             router.push("/auth")
         })
-        .catch((error) => {
+        .catch(error => {
             notif.error("Não foi possível se conectar, verifique os dados e tente novamente")
         })
         .finally(() => (isLoading.value = false))

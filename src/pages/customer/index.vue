@@ -2,7 +2,7 @@
 import { useHead } from "@vueuse/head"
 import { pageTitle } from "/@src/state/navbarLayoutState"
 
-const title = "Pedido #"
+const title = "Blank"
 
 pageTitle.value = title
 useHead({
@@ -12,9 +12,8 @@ useHead({
 
 <template>
     <NavbarSearchLayout theme="fade">
-        <!-- Content Wrapper -->
         <div class="page-content-inner">
-            <CommercialInvoice />
+            <CustomerDashboard />
         </div>
     </NavbarSearchLayout>
 </template>

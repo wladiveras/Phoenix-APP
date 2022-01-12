@@ -26,8 +26,6 @@ export const navbarLayoutTheme = computed(() => {
     switch (navbarLayoutId.value) {
         case "navbar-clean-fade":
             return "fade"
-
-            return "colored"
         case "navbar-clean-center":
             return "center"
         default:

@@ -47,7 +47,7 @@ export const spark1 = {
             data: randomizeArray(sparklineData),
         },
     ],
-    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
         min: 0,
         labels: {
@@ -101,7 +101,7 @@ export const spark2 = {
             data: randomizeArray(sparklineData),
         },
     ],
-    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
         min: 0,
         labels: {
@@ -155,7 +155,7 @@ export const spark3 = {
             data: randomizeArray(sparklineData),
         },
     ],
-    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
     xaxis: {
         type: "datetime",
     },
@@ -209,7 +209,7 @@ export const spark4 = {
             data: randomizeArray(sparklineData),
         },
     ],
-    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
     xaxis: {
         type: "datetime",
     },

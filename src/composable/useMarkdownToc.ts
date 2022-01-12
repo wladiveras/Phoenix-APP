@@ -15,7 +15,7 @@ export default function useMarkdownToc(container: Ref<HTMLElement | null>) {
     watchEffect(() => {
         if (container.value) {
             const anchors = container.value.querySelectorAll(HEADER_SELECTORS.join(", "))
-            anchors.forEach((anchor) => {
+            anchors.forEach(anchor => {
                 toc.value.push({
                     id: anchor.id,
                     level: parseInt(anchor.tagName.replace(/[a-z]+/i, "")),
