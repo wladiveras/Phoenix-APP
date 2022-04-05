@@ -20,7 +20,7 @@ useHead({
         You can see pages content samples from 
         files in /src/components/pages directory
       -->
-            <div style="color: red">BEM VINDO A PAGINA DO ADMINISTRADOR</div>
+            <div style="color: red">Olá SEJA MUITO BEM VINDO A PAGINA DO ADMINISTRADOR</div>
             <!-- <div v-if="x.can('card.edit')" style="color: red">
         Suas permissões
         <ul v-for="permission in x.permissions" :key="permission">
